@@ -1,17 +1,30 @@
 package travel.essense;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
-public class Order {
+public class Order implements Serializable {
+    public Order(int id, Client client, Country fromCountry, Country toCountry, LocalDate start, LocalDate  end, Resort resort, Price price, Transport transport ){
+        this.id = id;
+        this.client = client;
+        this.fromCountry = fromCountry;
+        this.toCountry = toCountry;
+        this.start = start;
+        this.end = end;
+        this.resort = resort;
+        this.price = price;
+        this.transport = transport;
+    }
+    private int id;
     private Client client;
     private Country fromCountry;
     private Country toCountry;
-    private Date start;
-    private Date end;
+    private LocalDate  start;
+    private LocalDate  end;
     private Resort resort;
-    private float price;
+    private Price price;
     private Transport transport;
-    private Hotel hotel;
 
     public Client getClient() {
         return client;
@@ -37,36 +50,12 @@ public class Order {
         this.toCountry = toCountry;
     }
 
-    public Date getStart() {
-        return start;
-    }
-
-    public void setStart(Date start) {
-        this.start = start;
-    }
-
-    public Date getEnd() {
-        return end;
-    }
-
-    public void setEnd(Date end) {
-        this.end = end;
-    }
-
     public Resort getResort() {
         return resort;
     }
 
     public void setResort(Resort resort) {
         this.resort = resort;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
     }
 
     public Transport getTransport() {
@@ -77,11 +66,41 @@ public class Order {
         this.transport = transport;
     }
 
-    public Hotel getHotel() {
-        return hotel;
+    public Price getPrice() {
+        return price;
     }
 
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
+    public void setPrice(Price price) {
+        this.price = price;
+    }
+
+    public LocalDate getStart() {
+        return start;
+    }
+
+    public void setStart(LocalDate start) {
+        this.start = start;
+    }
+
+    public LocalDate getEnd() {
+        return end;
+    }
+
+    public void setEnd(LocalDate end) {
+        this.end = end;
+    }
+
+    public String print() {
+        return "ID: " + id + " Client: " + client.print() + " From" + fromCountry.print()+ " To" + toCountry.print() +
+               " Date start: " + start.toString() + " Date end: " + end.toString() + " Resort" + resort.print() +
+               " Price: " + price.print() + " Transport " + transport.print();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

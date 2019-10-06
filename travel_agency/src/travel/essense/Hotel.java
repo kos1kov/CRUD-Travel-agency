@@ -1,9 +1,16 @@
 package travel.essense;
 
-public class Hotel {
+import java.io.Serializable;
+
+public class Hotel implements Serializable {
+    public Hotel(String name, int stars){
+
+        this.name = name;
+        this.stars = stars;
+    }
     private String name;
     private boolean allInclusive;
-    private int Stars;
+    private int stars;
 
     public String getName() {
         return name;
@@ -13,19 +20,15 @@ public class Hotel {
         this.name = name;
     }
 
-    public boolean isAllInclusive() {
-        return allInclusive;
-    }
-
-    public void setAllInclusive(boolean allInclusive) {
-        this.allInclusive = allInclusive;
-    }
-
     public int getStars() {
-        return Stars;
+        return stars;
     }
 
     public void setStars(int stars) {
-        Stars = stars;
+        this.stars = stars;
+    }
+
+    public String print() {
+        return " Hotel name: " + name + " Stars: " + stars;
     }
 }

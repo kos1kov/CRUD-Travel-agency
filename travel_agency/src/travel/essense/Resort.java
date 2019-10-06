@@ -2,9 +2,17 @@ package travel.essense;
 
 import org.w3c.dom.Text;
 
-public class Resort {
+import java.io.Serializable;
+
+public class Resort implements Serializable {
+    public Resort(String name, Hotel hotel ){
+
+        this.name = name;
+        this.hotel = hotel;
+    }
+
     private String name;
-    private Text Description;
+    private Hotel hotel;
 
     public String getName() {
         return name;
@@ -14,11 +22,15 @@ public class Resort {
         this.name = name;
     }
 
-    public Text getDescription() {
-        return Description;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public void setDescription(Text description) {
-        Description = description;
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
+
+    public String print() {
+        return " name: " + name + " " + hotel.print();
     }
 }

@@ -19,13 +19,19 @@ public class FileSerializer<T> {
         if(!newFile.createNewFile()){
             throw new IOException("Could not create file: " + newFile.getName());
         }
-
+        FileOutputStream fileOut = null;
+        ObjectOutputStream objectOut = null;
             try {
-                FileOutputStream fileOut = new FileOutputStream(newFile);
-                ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+                fileOut = new FileOutputStream(newFile);
+                objectOut = new ObjectOutputStream(fileOut);
                 objectOut.writeObject(serObj);
             } catch (Exception ex) {
                 ex.printStackTrace();
+            }finally {
+                assert fileOut != null;
+                fileOut.close();
+                assert objectOut != null;
+                objectOut.close();
             }
     }
     public T loadFromFile() throws ClassNotFoundException, IOException {

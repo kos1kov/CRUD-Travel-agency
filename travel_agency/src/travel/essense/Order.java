@@ -2,10 +2,9 @@ package travel.essense;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Order implements Serializable {
-    public Order(int id, Client client, Country fromCountry, Country toCountry, LocalDate start, LocalDate  end, Resort resort, Price price, Transport transport ){
+public class Order implements Serializable{
+    public Order(Integer id, Client client, Country fromCountry, Country toCountry, LocalDate start, LocalDate end, Resort resort, Integer price, Transport transport){
         this.id = id;
         this.client = client;
         this.fromCountry = fromCountry;
@@ -16,14 +15,14 @@ public class Order implements Serializable {
         this.price = price;
         this.transport = transport;
     }
-    private int id;
+    private Integer id;
     private Client client;
     private Country fromCountry;
     private Country toCountry;
     private LocalDate  start;
     private LocalDate  end;
     private Resort resort;
-    private Price price;
+    public Integer price;
     private Transport transport;
 
     public Client getClient() {
@@ -66,14 +65,6 @@ public class Order implements Serializable {
         this.transport = transport;
     }
 
-    public Price getPrice() {
-        return price;
-    }
-
-    public void setPrice(Price price) {
-        this.price = price;
-    }
-
     public LocalDate getStart() {
         return start;
     }
@@ -93,7 +84,7 @@ public class Order implements Serializable {
     public String print() {
         return "ID: " + id + " Client: " + client.print() + " From" + fromCountry.print()+ " To" + toCountry.print() +
                " Date start: " + start.toString() + " Date end: " + end.toString() + " Resort" + resort.print() +
-               " Price: " + price.print() + " Transport " + transport.print();
+               " Price: " + price + " Transport " + transport.print();
     }
 
     public int getId() {
@@ -103,4 +94,5 @@ public class Order implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
 }

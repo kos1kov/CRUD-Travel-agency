@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="12.0.2" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="travel.essense.Client">
+    <void property="email">
+     <string>11</string>
+    </void>
+    <void property="firstName">
+     <string>dima</string>
+    </void>
+    <void property="id">
+     <int>1</int>
+    </void>
+    <void property="lastName">
+     <string>kosikov</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="travel.essense.Client">
+    <void property="email">
+     <string>12</string>
+    </void>
+    <void property="firstName">
+     <string>epam</string>
+    </void>
+    <void property="id">
+     <int>2</int>
+    </void>
+    <void property="lastName">
+     <string>labs</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

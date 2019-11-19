@@ -5,14 +5,21 @@ import org.w3c.dom.Text;
 import java.io.Serializable;
 
 public class Resort implements Serializable {
-    public Resort(String name, Hotel hotel ){
 
+    public Resort(int id, String name, String hotelName, int stars ){
+        this.id = id;
         this.name = name;
-        this.hotel = hotel;
+        this.hotelName = hotelName;
+        this.stars = stars;
     }
 
+    public Resort(){
+    }
+
+    private int id;
     private String name;
-    private Hotel hotel;
+    private  int stars;
+    private  String hotelName;
 
     public String getName() {
         return name;
@@ -22,15 +29,32 @@ public class Resort implements Serializable {
         this.name = name;
     }
 
-    public Hotel getHotel() {
-        return hotel;
+    public int getStars() {
+        return stars;
     }
 
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
+    public void setStars(int stars) {
+        this.stars = stars;
+    }
+
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String print() {
-        return " name: " + name + " " + hotel.print();
+        return "ID:" + id + " name: " + name + " " + " hotel: " + hotelName + " stars: " + stars;
     }
+
 }

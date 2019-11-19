@@ -3,11 +3,18 @@ package travel.essense;
 import java.io.Serializable;
 
 public class Client implements Serializable {
-    public Client(String name, String surname, String phoneNumber) {
-            this.firstName = name;
-            this.lastName = surname;
-            this.email = phoneNumber;
-            }
+
+    public Client(int id, String name, String surname, String phoneNumber) {
+        this.id = id;
+        this.firstName = name;
+        this.lastName = surname;
+        this.email = phoneNumber;
+    }
+
+    public Client(){
+    }
+
+    private  int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -36,7 +43,17 @@ public class Client implements Serializable {
         this.firstName = firstName;
     }
 
-    public String print() {
-        return " First name: " + firstName + " Last name: " + lastName + " Email: " + email;
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String toString() {
+        return "Client{ ID=" + id + " ,First name= " + firstName + " ,Last name= " + lastName + " ,Email: " + email + " }";
+    }
+
+
 }

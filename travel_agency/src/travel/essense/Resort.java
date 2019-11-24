@@ -53,7 +53,7 @@ public class Resort implements Serializable {
         this.id = id;
     }
 
-    public String print() {
+    public String toString() {
         return "ID:" + id + " name: " + name + " " + " hotel: " + hotelName + " stars: " + stars;
     }
 

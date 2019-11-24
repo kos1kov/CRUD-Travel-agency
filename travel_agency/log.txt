@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-11-24T21:22:45.818913500Z</date>
+  <millis>1574630565818</millis>
+  <nanos>913500</nanos>
+  <sequence>0</sequence>
+  <logger>travel.db.Migrator</logger>
+  <level>INFO</level>
+  <class>travel.db.Migrator</class>
+  <method>validate</method>
+  <thread>1</thread>
+  <message>Validated</message>
+</record>
+<record>
+  <date>2019-11-24T21:22:45.837862400Z</date>
+  <millis>1574630565837</millis>
+  <nanos>862400</nanos>
+  <sequence>1</sequence>
+  <logger>travel.db.Migrator</logger>
+  <level>INFO</level>
+  <class>travel.db.Migrator</class>
+  <method>validate</method>
+  <thread>1</thread>
+  <message>Validated</message>
+</record>
+<record>
+  <date>2019-11-24T21:22:45.841852Z</date>
+  <millis>1574630565841</millis>
+  <nanos>852000</nanos>
+  <sequence>2</sequence>
+  <logger>travel.db.Migrator</logger>
+  <level>INFO</level>
+  <class>travel.db.Migrator</class>
+  <method>validate</method>
+  <thread>1</thread>
+  <message>Validated</message>
+</record>

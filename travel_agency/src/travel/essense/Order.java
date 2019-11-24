@@ -1,12 +1,14 @@
 package travel.essense;
 
-import com.sun.jdi.connect.Transport;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.io.Serializable;
 
-public class Order implements Serializable{
+@JacksonXmlRootElement(localName = "order")
+public class Order implements Serializable {
 
-    public Order(Integer id, Client client, Resort resort, Integer price){
+    public Order(int id, Client client, Resort resort, int price){
         this.id = id;
         this.client = client;
         this.resort = resort;
@@ -16,10 +18,11 @@ public class Order implements Serializable{
     public Order(){
 
     }
-    private Integer id;
+    @JacksonXmlProperty(isAttribute=true)
+    private int id;
     private Client client;
     private Resort resort;
-    public Integer price;
+    public int price;
 
     public Client getClient() {
         return client;
@@ -46,8 +49,8 @@ public class Order implements Serializable{
     }
 
 
-    public String print() {
-        return "Order ID: " + id + " Client: " + client.toString() + " Resort" + resort.print() +
+    public String toString() {
+        return "Order ID: " + id + " Client: " + client.toString() + " Resort" + resort.toString() +
                " Price: " + price;
     }
 

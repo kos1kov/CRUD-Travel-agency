@@ -1,17 +1,24 @@
 package travel.data;
 
+
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
 
 public class FileSerializer<T> {
 
     public  void saveFile(T serObj, String filename) throws IOException {
-        XMLEncoder xmlEncoder = new XMLEncoder(new FileOutputStream(filename));
-        xmlEncoder.writeObject(serObj);
-        xmlEncoder.close();
+        XmlMapper xmlMapper = new XmlMapper();
+
+        xmlMapper.writeValue(new File(filename), serObj);
     }
+
+
     public T loadFromFile(String filename) throws ClassNotFoundException, IOException {
         XMLDecoder decoder =
                 new XMLDecoder(

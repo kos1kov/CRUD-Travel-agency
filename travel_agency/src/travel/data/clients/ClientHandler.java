@@ -1,18 +1,27 @@
 package travel.data.clients;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import travel.data.FileSerializer;
 import travel.essense.Client;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class ClientHandler {
+public class ClientHandler implements Serializable {
     public static FileSerializer fileSerializer = new FileSerializer<Client>();
+
+    @JacksonXmlElementWrapper(localName = "client")
+    @JacksonXmlProperty(localName = "client")
     private static List<Client> clients = new ArrayList<Client>();
     public static void addClient(Client client) throws IOException {
-        client.setId(clients.get(clients.size()).getId() + 1);
+        if (clients.size() == 0) {
+            client.setId(0);
+        }else {
+            client.setId(clients.get(clients.size() - 1).getId() + 1);
+        }
         clients.add(client);
         fileSerializer.saveFile(clients, "clients.xml");
     }
